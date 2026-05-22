@@ -1,0 +1,21 @@
+{
+  "name": "xqs-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "面向公益捐赠的区块链溯源平台 — Monorepo (contracts + api + web)",
+  "workspaces": [
+    "contracts",
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "chain:node": "npm --workspace contracts run node",
+    "chain:deploy:local": "npm --workspace contracts run deploy:local",
+    "chain:deploy:sepolia": "npm --workspace contracts run deploy:sepolia",
+    "chain:test": "npm --workspace contracts run test",
+    "api:dev": "npm --workspace api run dev",
+    "api:start": "npm --workspace api run start",
+    "web:dev": "npm --workspace web run dev",
+    "web:build": "npm --workspace web run build"
+  }
+}

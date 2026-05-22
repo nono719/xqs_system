@@ -1,0 +1,26 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Hardhat
+contracts/cache/
+contracts/artifacts/
+contracts/typechain-types/
+contracts/deployments-local.json
+
+# API
+api/data/*.db
+api/data/*.db-journal
+api/dist/
+
+# Web
+web/dist/
+web/.vite/
