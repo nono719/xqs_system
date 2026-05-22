@@ -26,22 +26,49 @@ async function submit() {
 </script>
 
 <template>
-  <div class="container" style="max-width:420px;">
-    <div class="card">
-      <h2>注册</h2>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <h2>注册账号</h2>
+      <p class="sub">加入 XQS 公益溯源平台</p>
+
       <label>邮箱</label>
-      <input v-model="email" type="email" />
-      <label>密码（≥6位）</label>
-      <input v-model="password" type="password" />
+      <input v-model="email" type="email" placeholder="you@example.com" />
+      <label>密码（≥6 位）</label>
+      <input v-model="password" type="password" placeholder="******" />
+
       <label>注册类型</label>
-      <select v-model="role">
-        <option value="donor">捐赠者</option>
-        <option value="org_admin">机构管理员</option>
-      </select>
+      <div class="row" style="gap:10px;">
+        <label
+          style="margin:0;padding:14px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;flex:1;display:flex;align-items:center;gap:10px;transition:all .15s;"
+          :style="role === 'donor' ? 'border-color:var(--primary);background:var(--primary-soft);' : ''"
+        >
+          <input type="radio" value="donor" v-model="role" style="width:auto;margin:0;" />
+          <span>
+            <strong style="font-size:14px;color:var(--text);">💝 捐赠者</strong>
+            <span class="faint" style="display:block;">浏览项目并发起捐款</span>
+          </span>
+        </label>
+        <label
+          style="margin:0;padding:14px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;flex:1;display:flex;align-items:center;gap:10px;transition:all .15s;"
+          :style="role === 'org_admin' ? 'border-color:var(--primary);background:var(--primary-soft);' : ''"
+        >
+          <input type="radio" value="org_admin" v-model="role" style="width:auto;margin:0;" />
+          <span>
+            <strong style="font-size:14px;color:var(--text);">🏛 机构管理员</strong>
+            <span class="faint" style="display:block;">提交入驻并发布项目</span>
+          </span>
+        </label>
+      </div>
+
       <div v-if="error" class="notice error">{{ error }}</div>
-      <button style="width:100%;margin-top:16px;" :disabled="loading" @click="submit">
+
+      <button class="block lg" style="margin-top:20px;" :disabled="loading" @click="submit">
         {{ loading ? "注册中..." : "立即注册" }}
       </button>
+
+      <p class="muted" style="margin-top:18px;text-align:center;">
+        已有账号？<router-link to="/login">前往登录</router-link>
+      </p>
     </div>
   </div>
 </template>

@@ -22,23 +22,40 @@ async function submit() {
     loading.value = false;
   }
 }
+
+function fillAdmin() {
+  email.value = "admin@xqs.local";
+  password.value = "admin123";
+}
 </script>
 
 <template>
-  <div class="container" style="max-width:420px;">
-    <div class="card">
-      <h2>登录</h2>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <h2>欢迎回来</h2>
+      <p class="sub">登录账号继续使用 XQS 公益溯源平台</p>
+
       <label>邮箱</label>
-      <input v-model="email" type="email" />
+      <input v-model="email" type="email" placeholder="you@example.com" />
       <label>密码</label>
-      <input v-model="password" type="password" @keyup.enter="submit" />
+      <input v-model="password" type="password" placeholder="******" @keyup.enter="submit" />
+
       <div v-if="error" class="notice error">{{ error }}</div>
-      <button style="width:100%;margin-top:16px;" :disabled="loading" @click="submit">
+
+      <button class="block lg" style="margin-top:20px;" :disabled="loading" @click="submit">
         {{ loading ? "登录中..." : "登录" }}
       </button>
-      <p class="muted" style="margin-top:12px;text-align:center;">
-        默认管理员：admin@xqs.local / admin123<br />
-        没有账号？<router-link to="/register">点此注册</router-link>
+
+      <div class="divider"></div>
+
+      <div class="card inset" style="margin:0;padding:14px;font-size:13px;">
+        <p style="margin:0 0 6px;font-weight:600;">💡 演示账号</p>
+        <p class="muted" style="margin:0 0 8px;">默认管理员：admin@xqs.local / admin123</p>
+        <button class="ghost sm" @click="fillAdmin">一键填入</button>
+      </div>
+
+      <p class="muted" style="margin-top:18px;text-align:center;">
+        没有账号？<router-link to="/register">立即注册</router-link>
       </p>
     </div>
   </div>
