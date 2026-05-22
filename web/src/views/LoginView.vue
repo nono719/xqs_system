@@ -33,7 +33,7 @@ function fillAdmin() {
   <div class="auth-shell">
     <div class="auth-card">
       <h2>欢迎回来</h2>
-      <p class="sub">登录账号继续使用 XQS 公益溯源平台</p>
+      <p class="sub">登录账号继续使用 溯善链 SuShanChain</p>
 
       <label>邮箱</label>
       <input v-model="email" type="email" placeholder="you@example.com" />

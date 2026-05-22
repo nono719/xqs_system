@@ -23,7 +23,7 @@ const roleLabel: Record<string, string> = {
     <div class="inner">
       <router-link to="/" class="brand">
         <span class="brand-icon">⛓</span>
-        <span>XQS 公益溯源</span>
+        <span>溯善链</span>
       </router-link>
       <router-link to="/" class="nav-link">首页</router-link>
       <router-link to="/trace" class="nav-link">溯源查询</router-link>

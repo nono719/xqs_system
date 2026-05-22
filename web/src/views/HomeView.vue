@@ -42,8 +42,8 @@ onMounted(async () => {
 <template>
   <div class="container">
     <section class="hero">
-      <h1>面向公益捐赠的区块链溯源平台</h1>
-      <p>链下业务承载 · 链上摘要锚定 · 一码全程溯源</p>
+      <h1>溯善链 · SuShanChain</h1>
+      <p>面向公益捐赠的区块链溯源平台 — 链下业务承载 · 链上摘要锚定 · 一码全程溯源</p>
       <div class="stats">
         <div class="stat">
           <div class="v">{{ stats.total }}</div>

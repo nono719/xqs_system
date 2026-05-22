@@ -29,7 +29,7 @@ async function submit() {
   <div class="auth-shell">
     <div class="auth-card">
       <h2>注册账号</h2>
-      <p class="sub">加入 XQS 公益溯源平台</p>
+      <p class="sub">加入 溯善链 SuShanChain</p>
 
       <label>邮箱</label>
       <input v-model="email" type="email" placeholder="you@example.com" />
